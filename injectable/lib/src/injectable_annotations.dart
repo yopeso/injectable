@@ -72,7 +72,7 @@ class InjectableInit {
   /// feature flag to activate a 'constructor callback'.
   /// Setting this to 'true' will generate an additional parameter
   /// to '$initGetIt' - named "constructorCallback" - a function of signature
-  /// "T constructorCallback<T>(T)".
+  /// "T constructorCallback%lt;T%gt;(T)".
   /// Injectable will pass all injectable objects to this delegate at the
   /// time of their constructor/module-method invocation.
   /// defaults to false
@@ -379,7 +379,7 @@ const order = Order(0);
 
 /// Used to annotate dependencies which are
 /// registered under a different scope than main-scope
-@Target({TargetKind.classType})
+@Target({TargetKind.classType, TargetKind.method, TargetKind.getter})
 class Scope {
   /// name of the scope
   final String name;
